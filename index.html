@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PaletteAI — Personalized Style Engine</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <!-- Local test logo path (replace with hosted URL on production) -->
+      <img src="C:\Users\harin\Downloads\PaletteAI_logo.jpg" alt="PaletteAI logo" class="logo" />
+      <div>
+        <h1>PaletteAI</h1>
+        <p class="tag">Capture · Encode · Apply — Your signature visual style</p>
+      </div>
+    </div>
+    <nav>
+      <a href="#About">About</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="left-panel">
+      <h2>1) Upload Style Images</h2>
+      <p class="muted">Upload 3–8 images that show the look you want (palette, texture, lighting).</p>
+      <div class="dropzone">
+        <input id="styleImages" type="file" accept="image/*" multiple>
+      </div>
+      <div id="preview" class="preview-grid"></div>
+
+      <h2>2) Prompt</h2>
+      <textarea id="prompt" placeholder="e.g., A futuristic cat playing piano"></textarea>
+
+      <div class="controls">
+        <label>Style Strength <input id="strength" type="range" min="0" max="1" step="0.05" value="0.9"></label>
+        <label>Color Lock <input id="colorLock" type="checkbox"></label>
+      </div>
+
+      <button id="generateBtn" class="primary">Generate</button>
+    </section>
+
+    <section class="right-panel" id="demo">
+      <div class="output-header">
+        <h2>Generated Output</h2>
+        <div id="status" class="status muted">Idle</div>
+      </div>
+
+      <div id="spinner" class="spinner hidden" aria-hidden="true">
+        <div class="loader"></div>
+        <div class="loader-text">Generating…</div>
+      </div>
+
+      <div id="output" class="output-grid"></div>
+
+      <div class="gallery-actions">
+        <button id="downloadAll" class="ghost">Download All</button>
+        <button id="regenerate" class="ghost">Regenerate</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Built for Hackathon — PaletteAI</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
